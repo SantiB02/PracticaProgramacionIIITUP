@@ -1,13 +1,13 @@
-﻿using BusinessLayer.Services;
-using ExploreOOP.src.BusinessLayer.Entities;
-using PersistenceLayer;
+﻿using ExploreOOP.BusinessLayer.Services;
+using ExploreOOP.BusinessLayer.Entities;
+using ExploreOOP.PersistenceLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreOOP.src.PresentationLayer
+namespace ExploreOOP.PresentationLayer
 {
     public static class MainMenuUI
     {
@@ -36,7 +36,7 @@ namespace ExploreOOP.src.PresentationLayer
 
                         foreach (var item in lista)
                         {
-                            Console.WriteLine($"Account {item.Owner} Balance {item.Balance}" );
+                            Console.WriteLine($"Account ID: {item.Number} {item.Owner} Balance {item.Balance}" );
                         }
 
                         PrintPressToContinue();

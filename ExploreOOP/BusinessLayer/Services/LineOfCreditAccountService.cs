@@ -1,16 +1,15 @@
 ﻿
-using ExploreOOP.src.BusinessLayer.Entities;
-using PersistenceLayer;
+using ExploreOOP.BusinessLayer.Entities;
+using ExploreOOP.PersistenceLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace BusinessLayer.Services
+namespace ExploreOOP.BusinessLayer.Services
 {
-    public class LineOfCreditAccountService
+    public class LineOfCreditAccountService : ILineOfCreditAccountService
     {
         ILineOfCreditAccountRepository _lineOfCreditAccountRepository;
 
@@ -18,6 +17,18 @@ namespace BusinessLayer.Services
         {
             _lineOfCreditAccountRepository = lineOfCreditAccountRepository;
         }
+
+        public LineOfCreditAccount Get(int id)
+        {
+            return _lineOfCreditAccountRepository.Get(id);
+        }
+
+
+        public void Delete(int id)
+        {
+            _lineOfCreditAccountRepository.Delete(id);
+        }
+
 
         public List<LineOfCreditAccount> GetAll()
         {
