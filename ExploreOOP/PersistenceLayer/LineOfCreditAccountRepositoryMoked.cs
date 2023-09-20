@@ -25,7 +25,13 @@ namespace ExploreOOP.PersistenceLayer
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            foreach (var account in s_List)
+            {
+                if (account.Number == id.ToString())
+                {
+                    s_List.Remove(account); //borro la cuenta que coincida con el id provisto
+                }
+            }
         }
 
         public LineOfCreditAccount Get(int id)
